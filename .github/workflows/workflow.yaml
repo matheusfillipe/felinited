@@ -1,0 +1,23 @@
+name: Godot Builder
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  Builder:
+    runs-on: ubuntu-latest
+    container:
+      image: registry.gitlab.com/greenfox/godot-build-automation:latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build Godot Project
+      run: |
+        builder
+    - name: Deploy To Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./public
