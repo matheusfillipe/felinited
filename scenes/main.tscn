@@ -10,4 +10,5 @@ position = Vector2(1644, 1671)
 texture = ExtResource("1_k3wok")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_g6ipw")]
+position = Vector2(0, -1)
 scale = Vector2(5.585, 5.564)
