@@ -3,7 +3,6 @@ on: push
 
 env:
   GODOT_VERSION: 4.1.3
-  EXPORT_NAME: felinited
 
 jobs:
   export-windows:
@@ -27,7 +26,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
-          name: windows
+          name: felinited-windows.zip
           path: build/windows
 
   export-linux:
@@ -51,7 +50,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
-          name: linux
+          name: felinited-linux.zip
           path: build/linux
 
   export-web:
@@ -87,7 +86,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
-          name: web
+          name: felinited-web.zip
           path: build/web
       - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v4
@@ -116,5 +115,5 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
-          name: mac
+          name: felinited-mac.zip
           path: build/mac
